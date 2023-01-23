@@ -10,7 +10,7 @@ function selectDayFromCurrent(day){
             cy.get("[data-name='chevron-right']").click()
             selectDayFromCurrent()                        
         }else{
-            cy.get("nb-calendar-day-picker [class='day-cell ng-star-inserted']").contains(futureDay).click()
+            cy.get(".day-cell").not(".bounding-month").contains(futureDay).click()
         }
     })
     return dateAssert

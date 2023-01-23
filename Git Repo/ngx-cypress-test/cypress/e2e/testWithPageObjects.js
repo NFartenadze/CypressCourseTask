@@ -1,6 +1,7 @@
 const { onDatePickerPage } = require("../support/page_objects/datePickerPage")
 const { onFormLayoutsPage } = require("../support/page_objects/formLayoutsPage")
 const { navigateTo } = require("../support/page_objects/navigationPage")
+const { onSmartTablePage } = require("../support/page_objects/smartTablePage")
 
 describe("Test with Page Object Pattern",()=>{
     beforeEach("open application",()=>{
@@ -21,6 +22,10 @@ describe("Test with Page Object Pattern",()=>{
         navigateTo.datePickerPage()
         onDatePickerPage.selectCommonDatepickerDateFromToday(1)
         onDatePickerPage.selectDatePickerWithRange(2,4)
+        navigateTo.smartTablePage()
+        onSmartTablePage.addNewRecordWithFirstAndLastName("nika","nika")
+        onSmartTablePage.updateAgeByFirstName("nika","45")
+        onSmartTablePage.deleteRowByIndex(5)
     })
 })
 
